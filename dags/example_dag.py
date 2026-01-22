@@ -3,7 +3,7 @@ Example DAG for Airflow 3.x
 """
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 # Default arguments for the DAG
 default_args = {
@@ -21,7 +21,7 @@ dag = DAG(
     'example_dag',
     default_args=default_args,
     description='A simple example DAG',
-    schedule_interval=timedelta(days=1),
+    schedule=timedelta(days=1),  # Changed from schedule_interval
     catchup=False,
     tags=['example'],
 )
