@@ -1,0 +1,11 @@
+[project]
+name = "airflow-local"
+version = "0.1.0"
+description = "Local Airflow 3 dev environment"
+requires-python = ">=3.12"
+
+dependencies = [
+  "apache-airflow-providers-postgres",
+  "apache-airflow-providers-redis",
+  "pandas"
+]
