@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+    
+# COPY ca-bundle.crt /usr/local/share/ca-certificates/ca.crt
+# RUN update-ca-certificates
+
+
 # Install uv system-wide
 RUN curl -LsSf https://astral.sh/uv/install.sh | env CARGO_HOME=/usr/local UV_INSTALL_DIR=/usr/local/bin sh
 
